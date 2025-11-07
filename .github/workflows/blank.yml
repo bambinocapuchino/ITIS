@@ -1,31 +1,31 @@
-name: Run Tests
+name: Python Tests
 
 on:
   push:
     branches:
-      - main  # или другая ветка, по которой хотите запускать тесты
+      - master
   pull_request:
     branches:
-      - main  # или другая ветка, по которой хотите запускать тесты
+      - master
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'  # укажите вашу версию Python
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'  # Укажите нужную версию Python
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt  # если у вас есть файл зависимостей
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pytest
 
-      - name: Run tests
-        run: |
-          pytest  # запускает тесты с помощью pytest
+    - name: Run tests
+      run: |
+        pytest tests/test_example.py  # Укажите путь к вашему файлу с тестами
