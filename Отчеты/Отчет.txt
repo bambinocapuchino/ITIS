@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+int main() {
+    cout << "Hello world";
+    return 0;
+}
+``` [2](https://blog.skillfactory.ru/kak-pisat-programmi-c-plus-plus/)
+
+**Объяснение кода**:
+
+* `#include <iostream>` — включает библиотеку потоков ввода-вывода для доступа к определениям операций ввода-вывода.
+* `int main() { ... }` — основная функция, с которой начинается выполнение программы на C++.
+* `cout << "Hello world"` — выводит сообщение «Hello world».
+* `return 0;` — завершает основную функцию и возвращает 0, сигнализируя об успешном запуске.
